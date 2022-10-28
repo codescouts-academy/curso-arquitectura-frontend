@@ -1,0 +1,22 @@
+{
+    "name": "@codescouts/ui",
+    "version": "1.0.0",
+    "private": true,
+    "main": "./lib/index.js",
+    "types": "./lib/index.d.ts",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "start": "tsc -w"
+    },
+    "dependencies": {
+        "@codescouts/domain": "*",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.4.2"
+    },
+    "devDependencies": {
+        "typescript": "^4.8.4"
+    }
+}
