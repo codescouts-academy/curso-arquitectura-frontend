@@ -1,9 +1,7 @@
-import { Auth } from "./ui/pages/Auth";
-import { Front } from "./ui/pages/Front";
-import { User } from "./ui/pages/User";
-
-import { Header } from "./ui/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import { Header } from "./ui/components";
+import { Home } from "./ui/pages/home/Home";
 
 const App = () => {
   return (
@@ -11,9 +9,7 @@ const App = () => {
       <div className="app">
         <Header />
         <Routes>
-          <Route path="/" element={<Front />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/user" element={<User />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </div>
     </BrowserRouter>
