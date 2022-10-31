@@ -1,21 +1,22 @@
 {
+  "include": ["./src"],
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": false,
-    "strict": true,
-    "strictPropertyInitialization": false,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "downlevelIteration": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
     "target": "es5",
-    "jsx": "react",
-    "lib": ["es6", "dom"],
-    "baseUrl": "./",
-    "types": ["jest"],
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  },
-  "exclude": ["node_modules", "lib"]
+  }
 }
