@@ -1,6 +1,6 @@
 import { Counter } from "../model/Counter";
 
 export interface CounterService {
-    counter: Counter,
+    counter?: Counter,
     save: (counter: Counter) => void;
 }

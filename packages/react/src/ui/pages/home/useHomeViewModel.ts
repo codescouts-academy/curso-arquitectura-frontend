@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useLayoutEffect, useState } from "react";
 import { useDecrementUseCase } from "../../../infrastructure/adapter/useDecrementUseCase";
 import { useGetInitialValueUseCase } from "../../../infrastructure/adapter/useGetInitialValueUseCase";
 import { useIncrementUseCase } from "../../../infrastructure/adapter/useIncrementUseCase";
@@ -12,16 +12,16 @@ export const useHomeViewModel = () => {
     const incrementUseCase = useIncrementUseCase();
     const decrementUseCase = useDecrementUseCase();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         getInitialValue.execute().finally(() => setLoading(false));
     }, [getInitialValue])
 
     const increment = useCallback(() => {
-        incrementUseCase.execute(counter);
+        incrementUseCase.execute(counter!);
     }, [counter, incrementUseCase])
 
     const decrement = useCallback(() => {
-        decrementUseCase.execute(counter);
+        decrementUseCase.execute(counter!);
     }, [counter, decrementUseCase])
 
 

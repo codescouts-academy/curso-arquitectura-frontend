@@ -2,9 +2,7 @@ import { CounterRepository } from "../../domain/repository/CounterRepository";
 import { fakeApi } from "../rest/api";
 
 const getRandomValue = () => {
-    const valueFromServerFake = Math.floor(Math.random() * 99);
-
-    return valueFromServerFake < 0 ? valueFromServerFake + 1 : valueFromServerFake;
+    return Math.floor(Math.random() * 10);
 }
 
 export const useCounterRepository = (): CounterRepository => {

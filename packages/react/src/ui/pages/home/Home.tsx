@@ -11,10 +11,13 @@ export const Home = () => {
         <Loader loading={loading} />
         <Show when={!loading}>
           <>
-            <button onClick={decrement} disabled={!counter.canDecrementValue()}>
+            <button
+              onClick={decrement}
+              disabled={!counter?.canDecrementValue()}
+            >
               Decrementar
             </button>
-            {counter.value}
+            {counter?.value}
             <button onClick={increment}>Incrementar</button>
           </>
         </Show>

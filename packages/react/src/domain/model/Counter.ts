@@ -1,6 +1,8 @@
 export class Counter {
-    constructor(private currentValue: number) {
+    private currentValue: number;
 
+    constructor(initialValue: number) {
+        this.currentValue = initialValue;
     }
 
     public get value() {
