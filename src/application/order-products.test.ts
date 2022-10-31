@@ -1,3 +1,5 @@
+import { IEventDispatcher } from "@codescouts/events";
+
 import { CartStorageService } from "../domain/services/CartStorageService";
 import { NotificationService } from "../domain/services/NotificationService";
 import { OrdersStorageService } from "../domain/services/OrdersStorageService";
@@ -14,6 +16,7 @@ describe("order products", () => {
   const cartStorage = mock<CartStorageService>();
   const payment = mock<PaymentService>();
   const notifier = mock<NotificationService>();
+  const dispatch = mock<IEventDispatcher>();
 
   const user = new User(
     "sample-user-id",
@@ -32,7 +35,8 @@ describe("order products", () => {
     orderStorage,
     cartStorage,
     payment,
-    notifier
+    notifier,
+    dispatch
   );
 
   test("when the payment is failed notify users", async () => {
