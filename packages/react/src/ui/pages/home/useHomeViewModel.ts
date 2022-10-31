@@ -8,9 +8,9 @@ import { useResolve } from "../../hooks/useResolve";
 export const useHomeViewModel = () => {
     const [loading, setLoading] = useState(true);
     const { counter } = useCounter();
-    const getInitialValue = useResolve(GetInitialValueUseCase); // useGetInitialValueUseCase();
-    const incrementUseCase = useResolve(IncrementUseCase); // useIncrementUseCase();
-    const decrementUseCase = useResolve(DecrementUseCase); //useDecrementUseCase();
+    const getInitialValue = useResolve(GetInitialValueUseCase);
+    const incrementUseCase = useResolve(IncrementUseCase);
+    const decrementUseCase = useResolve(DecrementUseCase);
 
     useLayoutEffect(() => {
         getInitialValue.execute().finally(() => setLoading(false));
