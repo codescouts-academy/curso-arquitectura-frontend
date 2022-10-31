@@ -5,8 +5,14 @@ import reportWebVitals from "./reportWebVitals";
 
 import App from "./App";
 
+import { DIProvider } from "./DIProvider";
+
 const root = ReactDOM.createRoot(document.getElementById("root")!);
-root.render(<App />);
+root.render(
+  <DIProvider>
+    <App />
+  </DIProvider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
