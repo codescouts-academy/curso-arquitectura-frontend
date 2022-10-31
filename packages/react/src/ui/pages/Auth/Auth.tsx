@@ -27,7 +27,7 @@ export const Auth = () => {
       </label>
 
       <button type="submit" disabled={loading}>
-        {loading ? "Trying to login..." : "Login"}
+        {loading ? "Iniciando sesión..." : "Login"}
       </button>
     </form>
   );

@@ -14,7 +14,7 @@ export const Cookie = ({ cookie }: { cookie: Product }) => {
 
       {!!user && (
         <button type="button" onClick={() => addToCart.execute(user, cookie)}>
-          {cookie.price} ₽
+          {cookie.price} €
         </button>
       )}
 

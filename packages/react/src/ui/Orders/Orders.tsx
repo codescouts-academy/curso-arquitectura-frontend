@@ -11,7 +11,7 @@ export const Orders = () => {
       <ul>
         {orders.map((order) => (
           <li key={order.created}>
-            {order.created} | {order.total} ₽ | {order.status}
+            {order.created} | {order.total} € | {order.status}
           </li>
         ))}
       </ul>

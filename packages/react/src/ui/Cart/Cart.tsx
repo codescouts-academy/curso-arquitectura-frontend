@@ -17,7 +17,7 @@ export const Cart = () => {
         ))}
       </ul>
 
-      <p>Total: {cart.calculateTotal()} ₽</p>
+      <p>Total: {cart.calculateTotal()} €</p>
     </section>
   );
 };
