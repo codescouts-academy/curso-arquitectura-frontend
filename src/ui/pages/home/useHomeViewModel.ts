@@ -1,9 +1,10 @@
+import { useResolve } from "@codescouts/ui";
 import { useCallback, useLayoutEffect, useState } from "react";
+
 import { DecrementUseCase } from "../../../application/decrement-use-case";
 import { GetInitialValueUseCase } from "../../../application/get-initial-value-use-case";
 import { IncrementUseCase } from "../../../application/increment-use-case";
 import { useCounter } from "../../../infrastructure/services/CounterService";
-import { useResolve } from "../../hooks/useResolve";
 
 export const useHomeViewModel = () => {
     const [loading, setLoading] = useState(true);
