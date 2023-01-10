@@ -1,6 +1,6 @@
-import { Counter } from "../domain/model/Counter";
-import { CounterRepository } from "../domain/repository/CounterRepository";
-import { CounterService } from "../domain/services/CounterService";
+import { Counter } from "@domain/model/Counter";
+import { CounterRepository } from "@domain/repository/CounterRepository";
+import { CounterService } from "@domain/services/CounterService";
 
 export class GetInitialValueUseCase {
     constructor(
