@@ -8,13 +8,21 @@
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   padding: 20px;
+  gap: 5px;
 }
 
 .logo {
-  text-decoration: none;
-  color: chocolate;
-  font-weight: 900;
+  animation: rotation 3s infinite forwards;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

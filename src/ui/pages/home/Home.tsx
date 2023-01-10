@@ -1,5 +1,5 @@
 import { useHomeViewModel } from "./useHomeViewModel";
-import { Loader, Show } from "../../components";
+import { Loader, Show } from "@ui/components";
 import styles from "./Home.module.css";
 
 export const Home = () => {

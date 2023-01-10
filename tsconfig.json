@@ -18,5 +18,7 @@
     "jsx": "react-jsx",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+  "include": ["./src"],
+  "extends": "./tsconfig.paths.json"
 }

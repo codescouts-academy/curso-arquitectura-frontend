@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DependencyInjectionContainer } from "@codescouts/ui";
 
-import { Header } from "./ui/components";
-import { Home } from "./ui/pages/home/Home";
+import { Header } from "@ui/components";
+import { Home } from "@ui/pages/home/Home";
 
 import { buildDependencies } from "./di";
 
