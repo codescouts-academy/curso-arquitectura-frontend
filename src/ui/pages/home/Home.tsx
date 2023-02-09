@@ -1,5 +1,7 @@
 import { useHomeViewModel } from "./useHomeViewModel";
 import { Loader, Show } from "@ui/components";
+import { Folders } from "./components";
+
 import styles from "./Home.module.css";
 
 export const Home = () => {
@@ -22,6 +24,7 @@ export const Home = () => {
           </>
         </Show>
       </div>
+      <Folders />
     </div>
   );
 };
