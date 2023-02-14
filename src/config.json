@@ -1,0 +1,10 @@
+{
+    "http://server1:3000": {
+        "remote": "RANDOM_SERVER",
+        "canDecrement": false
+    },
+    "http://server2:3000": {
+        "remote": "ALWAYS_ZERO_SERVER",
+        "canDecrement": true
+    }
+}

@@ -1,14 +1,20 @@
 import { useCallback, useLayoutEffect, useState } from "react";
-import { useDecrementUseCase } from "@infrastructure/adapter/useDecrementUseCase";
+
+import { useToggleDecrementValueUseCase } from "@infrastructure/adapter/useToggleDecrementValueUseCase";
 import { useGetInitialValueUseCase } from "@infrastructure/adapter/useGetInitialValueUseCase";
 import { useIncrementUseCase } from "@infrastructure/adapter/useIncrementUseCase";
+import { useDecrementUseCase } from "@infrastructure/adapter/useDecrementUseCase";
 
 import { useCounter } from "@infrastructure/services/CounterService";
+import { useConfiguration } from "@infrastructure/services/ConfigurationService";
 
 export const useHomeViewModel = () => {
     const [loading, setLoading] = useState(true);
-    const { counter } = useCounter();
+    const service = useCounter();
+    const counter = service.counter;
+    const { configuration } = useConfiguration();
 
+    const toggleDecrementValueUseCase = useToggleDecrementValueUseCase();
     const getInitialValue = useGetInitialValueUseCase();
     const incrementUseCase = useIncrementUseCase();
     const decrementUseCase = useDecrementUseCase();
@@ -26,5 +32,9 @@ export const useHomeViewModel = () => {
     }, [counter, decrementUseCase])
 
 
-    return { loading, counter, increment, decrement }
+    const toggleDecrementValueManually = useCallback(() => {
+        toggleDecrementValueUseCase.execute()
+    }, [toggleDecrementValueUseCase])
+
+    return { loading, counter, increment, decrement, configuration, toggleDecrementValueManually }
 }

@@ -1,15 +1,22 @@
+import { useAlwaysZeroCounterRepository } from "./strategies/AlwaysZeroCounterRepository";
+import { useRandomCounterRepository } from "./strategies/RandomCounterRepository";
+
 import { CounterRepository } from "@domain/repository/CounterRepository";
+import { useConfiguration } from "@infrastructure/services/ConfigurationService";
 
-import { fakeApi } from "../rest/api";
-
-const getRandomValue = () => {
-    return Math.floor(Math.random() * 10);
+type WhiteLabelRemote = {
+    [key: string]: () => CounterRepository
 }
 
-export const useCounterRepository = (): CounterRepository => {
-    return {
-        getInitialValue() {
-            return fakeApi(getRandomValue());
-        }
-    };
-};
+const SupportedImplementations: WhiteLabelRemote = {
+    "RANDOM_SERVER": useRandomCounterRepository,
+    "ALWAYS_ZERO_SERVER": useAlwaysZeroCounterRepository
+}
+
+export const useCounterRepository = () => {
+    const { configuration } = useConfiguration();
+
+    const useRemote = SupportedImplementations[configuration!.remote];
+
+    return useRemote();
+}

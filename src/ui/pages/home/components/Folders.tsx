@@ -16,7 +16,10 @@ export const Folders = () => {
 ├── 📁 application/ Our use cases
 │   ├── get-initial-value-use-case.ts --> Here we model the use cases
 │   ├── increment-use-case.ts
-│   └── decrement-use-case.ts
+│   ├── decrement-use-case.ts
+│   ├── allow-decrement-value-use-case.ts
+│   └── load-configuration-use-case.ts
+│
 ├── 📁 domain/ Our Business logic
 │   ├── 📁 events --> Here we model the domain events
 │   ├── 📁 model --> Here we model our business logic
@@ -36,6 +39,8 @@ export const Folders = () => {
 │           ├── Home.tsx --> Page component (View)
 │           └── useHomeViewModel.ts --> Home UI business logic (ViewModel)
 │
+├── ConfigurationLoader.tsx
+├── config.json --> Our configuration with custom features and configs by "clients"
 ├── app.tsx
 └── index.tsx
 `}

@@ -5,7 +5,14 @@ import { Folders } from "./components";
 import styles from "./Home.module.css";
 
 export const Home = () => {
-  const { loading, counter, increment, decrement } = useHomeViewModel();
+  const {
+    loading,
+    configuration,
+    counter,
+    increment,
+    decrement,
+    toggleDecrementValueManually,
+  } = useHomeViewModel();
 
   return (
     <div className={styles.box}>
@@ -13,6 +20,7 @@ export const Home = () => {
         <Loader loading={loading} />
         <Show when={!loading}>
           <>
+            <p>Server: {configuration?.remote}</p>
             <button
               onClick={decrement}
               disabled={!counter?.canDecrementValue()}
@@ -21,6 +29,18 @@ export const Home = () => {
             </button>
             {counter?.value}
             <button onClick={increment}>Incrementar</button>
+
+            <Show when={!!configuration?.canDecrement}>
+              <>
+                <label>Can decrement</label>
+                <input
+                  id="canDecrement"
+                  type="checkbox"
+                  checked={counter?.canDecrementValue()}
+                  onChange={toggleDecrementValueManually}
+                />
+              </>
+            </Show>
           </>
         </Show>
       </div>

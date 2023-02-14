@@ -2,6 +2,8 @@
   background: rgb(40, 44, 52);
   color: rgb(255, 255, 255);
   border-radius: 5px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 pre {

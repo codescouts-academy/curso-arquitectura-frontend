@@ -6,5 +6,4 @@ import { CounterService } from "@domain/services/CounterService";
 export const useCounter = create<CounterService>((set) => ({
     save: (counter: Counter) => set({ counter })
 }))
-    .withPersist(Counter)
     .build();
