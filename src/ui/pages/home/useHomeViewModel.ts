@@ -21,7 +21,7 @@ export const useHomeViewModel = () => {
 
     useLayoutEffect(() => {
         getInitialValue.execute().finally(() => setLoading(false));
-    }, [getInitialValue])
+    }, [])
 
     const increment = useCallback(() => {
         incrementUseCase.execute(counter!);

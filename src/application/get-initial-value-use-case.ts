@@ -10,8 +10,6 @@ export class GetInitialValueUseCase {
     }
 
     public async execute() {
-        if (this.counterService.counter) return;
-
         const counterFromServer = await this.counterRepository.getInitialValue();
 
         this.counterService.save(new Counter(counterFromServer));
