@@ -14,5 +14,3 @@ export class AuthenticateUseCase {
     this.userStorageService.updateUser(user);
   }
 }
-
-
