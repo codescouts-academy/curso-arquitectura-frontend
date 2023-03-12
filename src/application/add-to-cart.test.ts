@@ -1,4 +1,4 @@
-import { MockProxy, mock } from "jest-mock-extended"
+import { mock } from "jest-mock-extended"
 
 import { CartStorageService } from "../domain/services/CartStorageService"
 import { NotificationService } from "../domain/services/NotificationService"
@@ -16,14 +16,15 @@ describe("AddToCart should", () => {
     });
     const notifier = mock<NotificationService>();
 
-    test("show message when user has allergies to product", () => {
+    test("show message when user has allergies to any ingredient of a product", () => {
+        const ingredientThatUserHasAllergy = "cacahuete";
 
         const user = new User("FAKE", "FAKE", "FAKE", [], [
-            "cacahuete",
+            ingredientThatUserHasAllergy,
             "cacao"
         ], []);
 
-        const productWithAllergies = new Product("FAKE", "FAKE", 0, ["cacahuete"]);
+        const productWithAllergies = new Product("FAKE", "FAKE", 0, [ingredientThatUserHasAllergy]);
 
         const addToProduct = new AddToCartUseCase(cartStorage, notifier);
 
