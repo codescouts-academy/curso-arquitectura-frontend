@@ -1,6 +1,7 @@
-import { PaymentService } from "../services/PaymentService";
 import { Cart } from "./cart";
 import { User } from "./user";
+
+import { PaymentService } from "../services/PaymentService";
 
 export type OrderStatus = "new" | "delivery" | "completed";
 

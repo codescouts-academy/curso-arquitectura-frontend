@@ -1,5 +1,5 @@
-import { CartStorageService } from "../domain/services/CartStorageService";
-import { UserStorageService } from "../domain/services/UserStorageService";
+import { CartStorageService } from "@domain/services/CartStorageService";
+import { UserStorageService } from "@domain/services/UserStorageService";
 
 export class LogoutUseCase {
   constructor(

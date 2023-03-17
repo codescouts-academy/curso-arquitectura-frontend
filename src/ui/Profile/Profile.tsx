@@ -1,4 +1,4 @@
-import { ingredients } from "../../domain/model/product";
+import { ingredients } from "@domain/model/product";
 import { useProfileViewModel } from "./useProfileViewModel";
 
 export const Profile = () => {

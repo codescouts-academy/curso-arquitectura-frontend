@@ -1,4 +1,4 @@
-import { Cart } from "../model/cart";
+import { Cart } from "@domain/model/cart";
 
 export interface CartStorageService {
   cart: Cart;

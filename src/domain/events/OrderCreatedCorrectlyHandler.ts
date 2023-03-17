@@ -1,4 +1,5 @@
 import { Handler } from "@codescouts/events";
+
 import { OrderCreatedCorrectly } from "./OrderCreatedCorrectly";
 
 export class OrderCreatedCorrectlyHandler extends Handler<OrderCreatedCorrectly> {

@@ -1,4 +1,4 @@
-import { useOrdersStorage } from "../../infrastructure/services/OrdersStorageService";
+import { useOrdersStorage } from "@infrastructure/services/OrdersStorageService";
 
 export const useOrdersViewModel = () => {
   const { orders } = useOrdersStorage();

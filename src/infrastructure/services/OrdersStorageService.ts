@@ -1,6 +1,8 @@
 import { create } from "@codescouts/store";
-import { Order } from "../../domain/model/order";
-import { OrdersStorageService } from "../../domain/services/OrdersStorageService";
+
+import { Order } from "@domain/model/order";
+
+import { OrdersStorageService } from "@domain/services/OrdersStorageService";
 
 export const useOrdersStorage = create<OrdersStorageService>((set) => ({
   orders: [],

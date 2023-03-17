@@ -1,6 +1,7 @@
 import styles from "./Cart.module.css";
-import { useCartStorage } from "../../infrastructure/services/CartStorageService";
-import { Cookie } from "../Cookie";
+import { useCartStorage } from "@infrastructure/services/CartStorageService";
+
+import { Cookie } from "@ui/Cookie";
 
 export const Cart = () => {
   const { cart } = useCartStorage();

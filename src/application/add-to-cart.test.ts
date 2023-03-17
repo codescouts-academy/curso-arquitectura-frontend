@@ -1,13 +1,13 @@
 import { mock } from "jest-mock-extended"
 
-import { CartStorageService } from "../domain/services/CartStorageService"
-import { NotificationService } from "../domain/services/NotificationService"
+import { CartStorageService } from "@domain/services/CartStorageService"
+import { NotificationService } from "@domain/services/NotificationService"
+
+import { User } from "@domain/model/user"
+import { Product } from "@domain/model/product"
+import { Cart } from "@domain/model/cart"
 
 import { AddToCartUseCase } from "./add-to-cart"
-
-import { User } from "../domain/model/user"
-import { Product } from "../domain/model/product"
-import { Cart } from "../domain/model/cart"
 
 describe("AddToCart should", () => {
     const cartMock = mock<Cart>();

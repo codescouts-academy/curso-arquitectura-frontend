@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useOrderProducts } from "../../infrastructure/adapter/useOrderProductsUseCase";
-import { UserName } from "../../domain/model/user";
-import { useCartStorage } from "../../infrastructure/services/CartStorageService";
-import { useUserStorage } from "../../infrastructure/services/UserStorageService";
+import { UserName } from "@domain/model/user";
+import { useOrderProducts } from "@infrastructure/adapter/useOrderProductsUseCase";
+import { useCartStorage } from "@infrastructure/services/CartStorageService";
+import { useUserStorage } from "@infrastructure/services/UserStorageService";
 
 export const useBuyViewModel = () => {
   const orderProducts = useOrderProducts();

@@ -1,4 +1,4 @@
-import { NotificationService } from "../../domain/services/NotificationService";
+import { NotificationService } from "@domain/services/NotificationService";
 
 export const useNotifier = (): NotificationService => {
   return {

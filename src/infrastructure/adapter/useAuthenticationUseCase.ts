@@ -1,4 +1,4 @@
-import { AuthenticationService } from "../../domain/services/AuthenticationService";
+import { AuthenticationService } from "@domain/services/AuthenticationService";
 import { useAuth } from "../services/AuthenticationService";
 import { useUserStorage } from "../services/UserStorageService";
 import { AuthenticateUseCase } from "../../application/authenticate";

@@ -1,6 +1,7 @@
-import { LogoutUseCase } from "../../application/logout";
-import { useCartStorage } from "../services/CartStorageService";
-import { useUserStorage } from "../services/UserStorageService";
+import { LogoutUseCase } from "@application/logout";
+
+import { useCartStorage } from "@infrastructure/services/CartStorageService";
+import { useUserStorage } from "@infrastructure/services/UserStorageService";
 
 export const useLogoutUseCase = () => {
     const user = useUserStorage();

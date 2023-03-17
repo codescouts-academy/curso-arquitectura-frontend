@@ -1,15 +1,16 @@
+import { mock } from "jest-mock-extended";
 import { IEventDispatcher } from "@codescouts/events";
 
-import { CartStorageService } from "../domain/services/CartStorageService";
-import { NotificationService } from "../domain/services/NotificationService";
-import { OrdersStorageService } from "../domain/services/OrdersStorageService";
-import { PaymentService } from "../domain/services/PaymentService";
-import { OrderProductsUserCase } from "./order-products";
+import { CartStorageService } from "@domain/services/CartStorageService";
+import { NotificationService } from "@domain/services/NotificationService";
+import { OrdersStorageService } from "@domain/services/OrdersStorageService";
+import { PaymentService } from "@domain/services/PaymentService";
 
-import { mock } from "jest-mock-extended";
-import { User } from "../domain/model/user";
-import { Cart } from "../domain/model/cart";
-import { Order } from "../domain/model/order";
+import { User } from "@domain/model/user";
+import { Cart } from "@domain/model/cart";
+import { Order } from "@domain/model/order";
+
+import { OrderProductsUserCase } from "./order-products";
 
 describe("order products", () => {
   const orderStorage = mock<OrdersStorageService>();

@@ -1,4 +1,4 @@
-import { Order } from "../model/order";
+import { Order } from "@domain/model/order";
 
 export interface OrdersStorageService {
   orders: Order[];

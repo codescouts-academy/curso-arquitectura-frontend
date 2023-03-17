@@ -1,6 +1,7 @@
 import styles from "./Cookie.module.css";
+import { Product } from "@domain/model/product";
+
 import { Toppings } from "./Toppings";
-import { Product } from "../../domain/model/product";
 import { useCookiesViewModel } from "./useCookiesViewModel";
 
 export const Cookie = ({ cookie }: { cookie: Product }) => {

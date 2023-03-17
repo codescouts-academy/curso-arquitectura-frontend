@@ -1,6 +1,8 @@
-import { User, UserName } from "../../domain/model/user";
-import { AuthenticationService } from "../../domain/services/AuthenticationService";
-import { fakeApi } from "../rest/api";
+import { fakeApi } from "@infrastructure/rest/api";
+
+import { User, UserName } from "@domain/model/user";
+
+import { AuthenticationService } from "@domain/services/AuthenticationService";
 
 export const useAuth = (): AuthenticationService => {
   return {

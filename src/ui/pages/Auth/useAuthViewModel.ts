@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { useAuthenticationUseCase } from "../../../infrastructure/adapter/useAuthenticationUseCase";
-import { UserName } from "../../../domain/model/user";
-import { useUserStorage } from "../../../infrastructure/services/UserStorageService";
+import { useAuthenticationUseCase } from "@infrastructure/adapter/useAuthenticationUseCase";
+import { UserName } from "@domain/model/user";
+import { useUserStorage } from "@infrastructure/services/UserStorageService";
 
 export const useAuthViewModel = () => {
   const navigate = useNavigate();

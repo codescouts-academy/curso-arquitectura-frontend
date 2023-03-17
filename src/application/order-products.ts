@@ -1,14 +1,14 @@
 import { IEventDispatcher } from "@codescouts/events";
 
-import { Cart } from "../domain/model/cart";
-import { User } from "../domain/model/user";
-import { Order } from "../domain/model/order";
+import { Cart } from "@domain/model/cart";
+import { User } from "@domain/model/user";
+import { Order } from "@domain/model/order";
 
-import { OrdersStorageService } from "../domain/services/OrdersStorageService";
-import { CartStorageService } from "../domain/services/CartStorageService";
-import { PaymentService } from "../domain/services/PaymentService";
-import { NotificationService } from "../domain/services/NotificationService";
-import { OrderCreatedCorrectly } from "../domain/events/OrderCreatedCorrectly";
+import { OrdersStorageService } from "@domain/services/OrdersStorageService";
+import { CartStorageService } from "@domain/services/CartStorageService";
+import { PaymentService } from "@domain/services/PaymentService";
+import { NotificationService } from "@domain/services/NotificationService";
+import { OrderCreatedCorrectly } from "@domain/events/OrderCreatedCorrectly";
 
 
 export class OrderProductsUserCase {

@@ -1,4 +1,4 @@
-import { useLogoutUseCase } from "../../../infrastructure/adapter/useLogoutUseCase";
+import { useLogoutUseCase } from "@infrastructure/adapter/useLogoutUseCase";
 
 export const useLogoutViewModel = () => {
     const useCase = useLogoutUseCase();

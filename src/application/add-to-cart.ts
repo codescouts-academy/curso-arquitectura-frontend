@@ -1,9 +1,8 @@
-import { User } from "../domain/model/user";
-import { Product } from "../domain/model/product";
+import { User } from "@domain/model/user";
+import { Product } from "@domain/model/product";
 
-import { NotificationService } from "../domain/services/NotificationService";
-import { CartStorageService } from "../domain/services/CartStorageService";
-
+import { NotificationService } from "@domain/services/NotificationService";
+import { CartStorageService } from "@domain/services/CartStorageService";
 
 export class AddToCartUseCase {
   private warningMessage: string =

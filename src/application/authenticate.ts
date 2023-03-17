@@ -1,6 +1,7 @@
-import { UserName } from "../domain/model/user";
-import { UserStorageService } from "../domain/services/UserStorageService";
-import { AuthenticationService } from "../domain/services/AuthenticationService";
+import { UserName } from "@domain/model/user";
+
+import { UserStorageService } from "@domain/services/UserStorageService";
+import { AuthenticationService } from "@domain/services/AuthenticationService";
 
 export class AuthenticateUseCase {
   constructor(
