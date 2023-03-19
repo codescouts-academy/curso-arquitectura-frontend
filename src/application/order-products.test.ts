@@ -11,13 +11,17 @@ import { Cart } from "@domain/model/cart";
 import { Order } from "@domain/model/order";
 
 import { OrderProductsUserCase } from "./order-products";
+import { OrderCreatedCorrectly } from "@domain/events/OrderCreatedCorrectly";
 
+jest
+  .useFakeTimers()
+  .setSystemTime(new Date('2020-01-01'));
 describe("order products", () => {
   const orderStorage = mock<OrdersStorageService>();
   const cartStorage = mock<CartStorageService>();
   const payment = mock<PaymentService>();
   const notifier = mock<NotificationService>();
-  const dispatch = mock<IEventDispatcher>();
+  const dispatcher = mock<IEventDispatcher>();
 
   const user = new User(
     "sample-user-id",
@@ -37,7 +41,7 @@ describe("order products", () => {
     cartStorage,
     payment,
     notifier,
-    dispatch
+    dispatcher
   );
 
   test("when the payment is failed notify users", async () => {
@@ -60,20 +64,12 @@ describe("order products", () => {
     expect(cartStorage.emptyCart).toBeCalledTimes(1);
   });
 
-  test("after 5 seconds the order change to deliver status", async () => {
-    const expectedOrder = new Order(user, cart);
-    expectedOrder.deliver();
+  test("when the payment is successfully dispatch order correctly created event", async () => {
     payment.tryPay.mockResolvedValue(true);
 
     await orderProducts.execute(user, cart);
 
-    const p = new Promise((res) => {
-      setTimeout(() => {
-        res(null);
-        expect(orderStorage.update).toBeCalledWith(expectedOrder);
-      }, 5000);
-    });
-
-    await p;
-  }, 6000);
+    expect(notifier.notify).toBeCalledTimes(0);
+    expect(dispatcher.dispatch).toHaveBeenCalledWith(new OrderCreatedCorrectly(new Order(user, cart)));
+  });
 });
