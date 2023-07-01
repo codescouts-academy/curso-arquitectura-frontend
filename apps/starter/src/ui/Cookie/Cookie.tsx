@@ -20,7 +20,7 @@ export const Cookie = ({ cookie }: { cookie: Product }) => {
         <button
           type="button"
           onClick={() => {
-            /* TODO ADD TO CART */
+            console.log("TODO: ADD TO CART");
           }}
         >
           {cookie.price} €

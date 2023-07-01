@@ -17,7 +17,8 @@ export const useBuyViewModel = () => {
     setLoading(true);
     e.preventDefault();
 
-    // TODO SUBMIT ORDER
+    console.log("TODO: SUBMIT YOUR ORDER");
+
     setLoading(false);
   };
 
