@@ -28,7 +28,7 @@
 ⬇️ Template downloading
 
 ```sh
-npx degit codescouts-academy/curso-arquitectura-frontend#shop-vite my-app
+npx degit codescouts-academy/curso-arquitectura-frontend#shop-vite-wip my-app
 ```
 
 🏂 Install dependencies
