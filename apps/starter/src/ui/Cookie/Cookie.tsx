@@ -6,7 +6,7 @@ import { Toppings } from "./Toppings";
 import { useCookiesViewModel } from "./useCookiesViewModel";
 
 export const Cookie = ({ cookie }: { cookie: Product }) => {
-  const { cart, user, addToCart } = useCookiesViewModel();
+  const { cart, user } = useCookiesViewModel(); //TODO ADD TO CART;
 
   return (
     <article className={styles.cookie}>
@@ -17,7 +17,12 @@ export const Cookie = ({ cookie }: { cookie: Product }) => {
       <Toppings user={user} cookie={cookie} />
 
       {!!user && (
-        <button type="button" onClick={() => addToCart.execute(user, cookie)}>
+        <button
+          type="button"
+          onClick={() => {
+            /* TODO ADD TO CART */
+          }}
+        >
           {cookie.price} €
         </button>
       )}

@@ -7,9 +7,7 @@ import { LogoutUseCase } from "./application/logout";
 import { OrderProductsUserCase } from "./application/order-products";
 import { useAuth } from "./infrastructure/services/AuthenticationService";
 import { useCartStorage } from "./infrastructure/services/CartStorageService";
-import { useNotifier } from "./infrastructure/services/NotificationService";
 import { useOrdersStorage } from "./infrastructure/services/OrdersStorageService";
-import { usePayment } from "./infrastructure/services/PaymentService";
 import { useUserStorage } from "./infrastructure/services/UserStorageService";
 
 export const buildDependencies = (builder: typeof register) => {
@@ -30,14 +28,6 @@ export const buildDependencies = (builder: typeof register) => {
       .withDynamic(() => useAuth())
       .build(),
 
-    builder("useNotifier")
-      .withDynamic(() => useNotifier())
-      .build(),
-
-    builder("usePayment")
-      .withDynamic(() => usePayment())
-      .build(),
-
     builder("useOrdersStorage")
       .withDynamic(() => useOrdersStorage())
       .build(),
@@ -52,17 +42,8 @@ export const buildDependencies = (builder: typeof register) => {
       .and("useUserStorage")
       .build(),
 
-    builder(AddToCartUseCase)
-      .withDependency("useCartStorage")
-      .and("useNotifier")
-      .build(),
+    builder(AddToCartUseCase).build(),
 
-    builder(OrderProductsUserCase)
-      .withDependency("useOrdersStorage")
-      .and("useCartStorage")
-      .and("usePayment")
-      .and("useNotifier")
-      .and("useEventDispatcher")
-      .build(),
+    builder(OrderProductsUserCase).build(),
   ];
 };

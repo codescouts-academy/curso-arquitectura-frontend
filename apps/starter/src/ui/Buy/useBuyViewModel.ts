@@ -1,13 +1,10 @@
-import { useResolve } from "@codescouts/di";
 import { useState } from "react";
 
-import { OrderProductsUserCase } from "@/application/order-products";
 import { UserName } from "@/domain/model/user";
 import { useCartStorage } from "@/infrastructure/services/CartStorageService";
 import { useUserStorage } from "@/infrastructure/services/UserStorageService";
 
 export const useBuyViewModel = () => {
-  const orderProductsUseCase = useResolve(OrderProductsUserCase);
   const { user } = useUserStorage();
   const { cart } = useCartStorage();
 
@@ -20,7 +17,7 @@ export const useBuyViewModel = () => {
     setLoading(true);
     e.preventDefault();
 
-    await orderProductsUseCase.execute(user, cart);
+    // TODO SUBMIT ORDER
     setLoading(false);
   };
 
