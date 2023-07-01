@@ -1,12 +1,13 @@
+import { useResolve } from "@codescouts/di";
 import { useState } from "react";
 
+import { OrderProductsUserCase } from "@/application/order-products";
 import { UserName } from "@/domain/model/user";
-import { useOrderProducts } from "@/infrastructure/adapter/useOrderProductsUseCase";
 import { useCartStorage } from "@/infrastructure/services/CartStorageService";
 import { useUserStorage } from "@/infrastructure/services/UserStorageService";
 
 export const useBuyViewModel = () => {
-  const orderProducts = useOrderProducts();
+  const orderProductsUseCase = useResolve(OrderProductsUserCase);
   const { user } = useUserStorage();
   const { cart } = useCartStorage();
 
@@ -19,7 +20,7 @@ export const useBuyViewModel = () => {
     setLoading(true);
     e.preventDefault();
 
-    await orderProducts.execute(user, cart);
+    await orderProductsUseCase.execute(user, cart);
     setLoading(false);
   };
 
