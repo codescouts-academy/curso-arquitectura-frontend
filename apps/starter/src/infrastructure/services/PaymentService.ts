@@ -4,7 +4,7 @@ import { fakeApi } from "@/infrastructure/rest/api";
 export const usePayment = (): PaymentService => {
   return {
     tryPay(amount: PriceCents) {
-      return fakeApi(amount > 500);
+      return fakeApi(amount < 500);
     },
   };
 };

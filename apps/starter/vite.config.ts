@@ -9,10 +9,6 @@ export default defineConfig({
     open: true,
   },
   plugins: [react()],
-  test: {
-    globals: true,
-    environment: "happy-dom",
-  },
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
   },
