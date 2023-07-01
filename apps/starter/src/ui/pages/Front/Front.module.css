@@ -1,6 +1,5 @@
 .list {
   --cols: auto-fit;
-
   display: grid;
   grid-template-columns: repeat(var(--cols), minmax(200px, 1fr));
   gap: 20px;

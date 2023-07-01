@@ -19,4 +19,9 @@
 
 .contains {
   padding-inline-start: 0.5rem;
+  color: hotpink;
+}
+
+.title {
+  font-weight: bold;
 }
