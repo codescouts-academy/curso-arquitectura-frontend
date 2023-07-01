@@ -25,7 +25,11 @@
 
 ## 🚀 Getting started
 
-⬇️ Template downloading
+🌏 With your browser 👇
+
+[Stackblitz](https://stackblitz.com/github/codescouts-academy/curso-arquitectura-frontend/tree/shop-vite-wip)
+
+🎯 With your IDE 👇
 
 ```sh
 npx degit codescouts-academy/curso-arquitectura-frontend#shop-vite-wip my-app
