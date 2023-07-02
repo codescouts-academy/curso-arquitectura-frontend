@@ -7,7 +7,7 @@ export class LogoutUseCase {
     private readonly cartStorage: CartStorageService
   ) {}
 
-  public async execute(): Promise<void> {
+  public execute(): void {
     this.cartStorage.emptyCart();
 
     this.userStorageService.logout();
