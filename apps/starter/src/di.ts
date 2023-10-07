@@ -15,26 +15,25 @@ import { useUserStorage } from "@/infrastructure/services/UserStorageService";
 export const buildDependencies = (builder: typeof register) => {
   return [
     builder(LogoutUseCase)
-      .withDependency(useUserStorage)
-      .and(useCartStorage)
+      .withDependencies(useUserStorage, useCartStorage)
       .build(),
 
     builder(AuthenticateUseCase)
-      .withDependency(useAuth)
-      .and(useUserStorage)
+      .withDependencies(useAuth, useUserStorage)
       .build(),
 
     builder(AddToCartUseCase)
-      .withDependency(useCartStorage)
-      .and(useNotifier)
+      .withDependencies(useCartStorage, useNotifier)
       .build(),
 
     builder(OrderProductsUserCase)
-      .withDependency(useOrdersStorage)
-      .and(useCartStorage)
-      .and(usePayment)
-      .and(useNotifier)
-      .and(useEventDispatcher)
+      .withDependencies(
+        useOrdersStorage,
+        useCartStorage,
+        usePayment,
+        useNotifier,
+        useEventDispatcher
+      )
       .build(),
   ];
 };
