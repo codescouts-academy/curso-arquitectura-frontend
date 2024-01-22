@@ -32,4 +32,8 @@ export class User implements DomainUser {
   public hasPreference(ingredient: Ingredient): boolean {
     return this.preferences.includes(ingredient);
   }
+
+  get isAdmin(): boolean {
+    return this.hasPermission(["admin"]);
+  }
 }

@@ -8,6 +8,7 @@ export const useCookiesViewModel = () => {
   const { user } = useUserStorage();
   const { cart } = useCartStorage();
   const addToCart = useResolve(AddToCartUseCase);
+
   return {
     cart,
     user,

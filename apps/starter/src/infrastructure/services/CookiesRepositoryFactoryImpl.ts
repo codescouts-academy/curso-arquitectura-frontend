@@ -11,8 +11,7 @@ export class CookiesRepositoryFactoryImpl
   implements CookiesRepositoryFactory
 {
   create(user: User) {
-    if (user.hasPermission(["admin"]))
-      return this.resolver.resolve(CookiesRepositoryForAdmin);
+    if (user.isAdmin) return this.resolver.resolve(CookiesRepositoryForAdmin);
 
     return this.resolver.resolve(CookiesRepositoryForNormalUser);
   }

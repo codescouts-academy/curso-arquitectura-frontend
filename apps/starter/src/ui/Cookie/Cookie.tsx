@@ -16,7 +16,7 @@ export const Cookie = ({ cookie }: { cookie: Product }) => {
       <span className={styles.title}>{cookie.title}</span>
       <Toppings user={user} cookie={cookie} />
 
-      {!!user && (
+      {user?.isAdmin && (
         <button type="button" onClick={() => addToCart.execute(user, cookie)}>
           {cookie.price} €
         </button>
