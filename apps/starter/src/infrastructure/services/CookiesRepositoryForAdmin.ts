@@ -4,7 +4,7 @@ import { CookiesRepository } from "@/domain/services/CookiesRepository";
 
 import { fakeApi } from "../rest/api";
 
-export class CookiesRepositoryImp implements CookiesRepository {
+export class CookiesRepositoryForAdmin implements CookiesRepository {
   getAll(): Promise<Product[]> {
     return fakeApi(cookies);
   }

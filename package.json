@@ -19,6 +19,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "@codescouts/di": "^0.0.8",
     "react-router-dom": "^6.14.1"
   }
 }

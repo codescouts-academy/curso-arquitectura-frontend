@@ -11,7 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@codescouts/di": "0.0.7",
+    "@codescouts/di": "0.0.8",
     "@codescouts/domain": "*",
     "@codescouts/events": "*",
     "@codescouts/store": "*",
