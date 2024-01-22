@@ -12,6 +12,9 @@ import { useOrdersStorage } from "@/infrastructure/services/OrdersStorageService
 import { usePayment } from "@/infrastructure/services/PaymentService";
 import { useUserStorage } from "@/infrastructure/services/UserStorageService";
 
+import { CookiesLoaderUseCase } from "./application/cookies-loader";
+import { CookiesRepositoryImp } from "./infrastructure/services/CookiesRepositoryImp";
+
 export const buildDependencies = (builder: typeof register) => {
   return [
     builder(LogoutUseCase)
@@ -35,5 +38,7 @@ export const buildDependencies = (builder: typeof register) => {
         useEventDispatcher
       )
       .build(),
+
+    builder(CookiesLoaderUseCase).withDependency(CookiesRepositoryImp).build(),
   ];
 };
