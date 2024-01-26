@@ -20,7 +20,6 @@ export const Front = () => {
           ))}
         </ul>
       )}
-      ´
     </main>
   );
 };
