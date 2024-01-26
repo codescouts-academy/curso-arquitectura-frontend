@@ -14,8 +14,8 @@ export const Toppings = ({
         <li key={topping}>
           {ingredients[topping]}
 
-          {!!user && user.hasPreference(topping) && <>👍</>}
-          {!!user && user.hasAllergy(topping) && <>⚠️</>}
+          {user?.hasPreference(topping) && <>👍</>}
+          {user?.hasAllergy(topping) && <>⚠️</>}
         </li>
       ))}
     </ul>
